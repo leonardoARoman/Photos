@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="userPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="639.0" prefWidth="642.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.UserController">
+   <children>
+      <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="600.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="273.0" prefWidth="800.0">
+               <children>
+                  <SplitPane dividerPositions="0.29797979797979796" prefHeight="210.0" prefWidth="614.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
+                    <items>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                           <children>
+                              <ListView fx:id="albumListView" onEditStart="#displayUserInfo" prefHeight="268.0" prefWidth="416.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0" />
+                              <Label fx:id="displayUser" layoutX="14.0" layoutY="6.0" prefHeight="27.0" prefWidth="179.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                           </children>
+                        </AnchorPane>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                           <children>
+                              <SplitPane dividerPositions="0.29797979797979796" layoutX="48.0" layoutY="54.0" prefHeight="268.0" prefWidth="416.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                <items>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="304.0" prefWidth="123.0">
+                                       <children>
+                                          <ListView fx:id="imageListView" layoutY="28.0" onEditStart="#uploadPhoto" prefHeight="150.0" prefWidth="122.0" AnchorPane.bottomAnchor="26.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0" />
+                                          <TextField layoutX="-51.0" layoutY="11.0" prefHeight="27.0" prefWidth="123.0" promptText="Search" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                          <Button layoutY="174.0" mnemonicParsing="false" onAction="#prevPhoto" text="&lt;&lt;&lt;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" />
+                                          <Button layoutX="59.0" layoutY="179.0" mnemonicParsing="false" onAction="#nextPhoto" text="&gt;&gt;&gt;" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+                                       </children>
+                                    </AnchorPane>
+                                  <AnchorPane disable="true" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="294.0">
+                                       <children>
+                                          <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="206.0" prefWidth="294.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                            <items>
+                                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                                   <children>
+                                                      <ImageView fx:id="imageView" fitHeight="206.0" fitWidth="294.0" onDragDetected="#displayPhoto" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                                      <AnchorPane layoutX="275.0" layoutY="-17.0" prefHeight="136.0" prefWidth="29.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="270.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                         <children>
+                                                            <ListView fx:id="taglistview" layoutY="24.0" prefHeight="112.0" prefWidth="128.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="24.0" />
+                                                            <Label layoutX="47.0" layoutY="6.0" prefHeight="27.0" prefWidth="128.0" text="            Photo Tags" textAlignment="CENTER" textFill="#d70c0c" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                                         </children>
+                                                      </AnchorPane>
+                                                      <Label fx:id="displayDateTime" layoutX="-20.0" layoutY="101.0" prefHeight="29.0" prefWidth="147.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="177.0" />
+                                                   </children>
+                                                </AnchorPane>
+                                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                                   <children>
+                                                      <ImageView fx:id="filteredImage" fitHeight="206.0" fitWidth="294.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                                   </children>
+                                                </AnchorPane>
+                                            </items>
+                                          </SplitPane>
+                                       </children>
+                                    </AnchorPane>
+                                </items>
+                              </SplitPane>
+                           </children>
+                        </AnchorPane>
+                    </items>
+                  </SplitPane>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="134.0" prefWidth="614.0" SplitPane.resizableWithParent="false">
+               <children>
+                  <MenuButton fx:id="filters" layoutX="259.0" layoutY="48.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="113.0" text="Photo filter" AnchorPane.topAnchor="21.0">
+                     <items>
+                        <MenuItem fx:id="flipVertical" mnemonicParsing="false" onAction="#photoFilter1" text="Flip vertical" />
+                        <MenuItem fx:id="flipHorizontal" mnemonicParsing="false" onAction="#photoFilter2" text="Flip Horizontal" />
+                        <MenuItem fx:id="flipDiagonal" mnemonicParsing="false" onAction="#photoFilter3" text="Flip Diagonal" />
+                     </items>
+                  </MenuButton>
+                  <MenuButton layoutX="14.0" layoutY="21.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="113.0" text="Album menu" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="21.0">
+                    <items>
+                      <MenuItem mnemonicParsing="false" onAction="#displayUserInfo" text="Display album" />
+                      <MenuItem mnemonicParsing="false" onAction="#createNewAlbum" text="Create new album" />
+                        <MenuItem mnemonicParsing="false" onAction="#renameAlbum" text="Rename album" />
+                        <MenuItem mnemonicParsing="false" onAction="#deleteAlbum" text="Delete album" />
+                    </items>
+                  </MenuButton>
+                  <MenuButton layoutX="138.0" layoutY="48.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="113.0" text="Photo menu" AnchorPane.topAnchor="21.0">
+                     <items>
+                        <MenuItem mnemonicParsing="false" onAction="#displayAlbumPhotos" text="Display photos" />
+                        <MenuItem mnemonicParsing="false" onAction="#displayPhoto" text="Show photo" />
+                        <MenuItem mnemonicParsing="false" onAction="#uploadPhoto" text="Upload photo" />
+                        <MenuItem mnemonicParsing="false" onAction="#deletePhoto" text="Delete photo" />
+                        <MenuItem mnemonicParsing="false" onAction="#copyPhoto" text="Copy photo" />
+                        <MenuItem mnemonicParsing="false" onAction="#movePhoto" text="Move photo" />
+                        <MenuItem mnemonicParsing="false" onAction="#addtag" text="add tag to the photo" />
+                        <MenuItem mnemonicParsing="false" onAction="#deletetag" text="delete tag from the photo" />
+                     </items>
+                  </MenuButton>
+                  <Button layoutX="519.0" layoutY="21.0" mnemonicParsing="false" onAction="#logOut" prefHeight="27.0" prefWidth="94.0" text="Log out" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="21.0" />
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+      <MenuBar prefHeight="27.0" prefWidth="616.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem fx:id="newAlbum" mnemonicParsing="false" onAction="#createNewAlbum" text="+Album" />
+                  <MenuItem fx:id="logOut" mnemonicParsing="false" onAction="#logOut" text="logOut" />
+                  <MenuItem fx:id="close" mnemonicParsing="false" text="Exit" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </children>
+</AnchorPane>
